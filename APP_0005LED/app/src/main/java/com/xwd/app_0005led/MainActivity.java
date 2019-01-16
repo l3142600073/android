@@ -18,7 +18,12 @@ public class MainActivity extends AppCompatActivity {
     class MyButtonListener implements View.OnClickListener{
         @Override
         public void onClick(View view) {
-            
+                // perform action on clock
+                ledon = !ledon;
+                if (ledon)
+                    button.setText("ALL OFF");
+                else
+                    button.setText("ALL ON");
         }
     }
     @Override
@@ -27,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button = (Button) findViewById(R.id.BUTTON);
+
+        button.setOnClickListener(new MyButtonListener());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
