@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Checkable;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +41,52 @@ public class MainActivity extends AppCompatActivity {
                     checkBoxLed3.setChecked(false);
                     checkBoxLed4.setChecked(false);
                 }
+        }
+    }
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            case R.id.LED1:
+                if (checked) {
+                    // Put some meat on the sandwich
+                    Toast.makeText(getApplicationContext(), "LED1 On", Toast.LENGTH_SHORT).show();
+                }
+                    else{
+                        Toast.makeText(getApplicationContext(), "LED1 of", Toast.LENGTH_SHORT).show();
+                    }
+                break;
+            case R.id.LED2:
+                if (checked) {
+                    // Put some meat on the sandwich
+                    Toast.makeText(getApplicationContext(), "LED2 On", Toast.LENGTH_SHORT).show();
+                }
+                    else{
+                        Toast.makeText(getApplicationContext(), "LED2 of", Toast.LENGTH_SHORT).show();
+                    }
+                break;
+            case R.id.LED3:
+                if (checked) {
+                    // Put some meat on the sandwich
+                    Toast.makeText(getApplicationContext(), "LED3 On", Toast.LENGTH_SHORT).show();
+                }
+                    else{
+                        Toast.makeText(getApplicationContext(), "LED3 of", Toast.LENGTH_SHORT).show();
+                    }
+                break;
+            case R.id.LED4:
+                if (checked) {
+                    // Put some meat on the sandwich
+                    Toast.makeText(getApplicationContext(), "LED4 On", Toast.LENGTH_SHORT).show();
+                }
+                    else{
+                        Toast.makeText(getApplicationContext(), "LED4 of", Toast.LENGTH_SHORT).show();
+                    }
+                break;
+            // TODO: Veggie sandwich
         }
     }
     @Override
