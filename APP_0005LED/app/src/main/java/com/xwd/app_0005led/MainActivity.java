@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Checkable;
 import android.widget.Toast;
+import com.xwd.hardlibrary.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     class MyButtonListener implements View.OnClickListener{
         @Override
         public void onClick(View view) {
+
+            HardControl hardControl = new HardControl();
                 // perform action on clock
                 ledon = !ledon;
                 if (ledon) {
