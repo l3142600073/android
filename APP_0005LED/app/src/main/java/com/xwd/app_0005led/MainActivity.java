@@ -9,21 +9,37 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Checkable;
 
 public class MainActivity extends AppCompatActivity {
 
     private boolean ledon = false;
     private Button button = null;
+    private CheckBox checkBoxLed1 = null;
+    private CheckBox checkBoxLed2 = null;
+    private CheckBox checkBoxLed3 = null;
+    private CheckBox checkBoxLed4 = null;
 
     class MyButtonListener implements View.OnClickListener{
         @Override
         public void onClick(View view) {
                 // perform action on clock
                 ledon = !ledon;
-                if (ledon)
+                if (ledon) {
                     button.setText("ALL OFF");
-                else
+                    checkBoxLed1.setChecked(true);
+                    checkBoxLed2.setChecked(true);
+                    checkBoxLed3.setChecked(true);
+                    checkBoxLed4.setChecked(true);
+                }
+                else {
                     button.setText("ALL ON");
+                    checkBoxLed1.setChecked(false);
+                    checkBoxLed2.setChecked(false);
+                    checkBoxLed3.setChecked(false);
+                    checkBoxLed4.setChecked(false);
+                }
         }
     }
     @Override
@@ -32,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button = (Button) findViewById(R.id.BUTTON);
+        checkBoxLed1 = (CheckBox) findViewById(R.id.LED1);
+        checkBoxLed2 = (CheckBox) findViewById(R.id.LED2);
+        checkBoxLed3 = (CheckBox) findViewById(R.id.LED3);
+        checkBoxLed4 = (CheckBox) findViewById(R.id.LED4);
 
         button.setOnClickListener(new MyButtonListener());
 
